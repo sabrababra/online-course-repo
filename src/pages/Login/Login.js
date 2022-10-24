@@ -3,10 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import {  toast } from 'react-toastify';
+import { GoogleAuthProvider } from 'firebase/auth';
 const Login = () => {
     const navigate=useNavigate();
     const [error, setError] = useState('');
-    const {signInWithEmail}=useContext(AuthContext)
+    const {signInWithEmail,providerLogin}=useContext(AuthContext)
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -23,6 +24,21 @@ const Login = () => {
         })
         .catch(error=>{
             console.error('error:',error);
+            setError(error.message);
+        })
+    }
+    const googleProvider= new GoogleAuthProvider();
+    const handleGoogleSignIn=()=>{
+        providerLogin(googleProvider)
+        .then(res=>{
+            const user=res.user;
+            console.log(user);
+           // form.reset();
+           navigate('/');
+           toast.success('Login successfully');
+        })
+        .catch(error=>{
+            console.error('error: ',error);
             setError(error.message);
         })
     }
@@ -65,7 +81,7 @@ const Login = () => {
                     </form>
                     <div className="divider">OR</div>
                     <div className="flex justify-evenly mt-6">
-                        <button className=""><FaGoogle className=' text-2xl hover:text-primary '></FaGoogle></button>
+                        <button onClick={handleGoogleSignIn} className=""><FaGoogle className=' text-2xl hover:text-primary '></FaGoogle></button>
                         <button className=""><FaGithub className=' text-2xl hover:text-primary'></FaGithub></button>
                     </div>
                 </div>
