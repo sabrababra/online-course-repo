@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/icon/icon.png'
+import logo2 from '../../assets/icon/logo.png'
 
 const Header = () => {
     return (
@@ -16,7 +18,8 @@ const Header = () => {
                     <li><Link className='my-1'to='/faq'>FAQ</Link></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+
+                <Link to='/' className="btn btn-ghost"><img className=' w-10 ' src={logo2} alt=''/> <img className=' w-24' src={logo} alt='' /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
