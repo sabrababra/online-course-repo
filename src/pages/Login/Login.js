@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import {  toast } from 'react-toastify';
 const Login = () => {
+    const navigate=useNavigate();
     const [error, setError] = useState('');
-
+    const {signInWithEmail}=useContext(AuthContext)
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        //console.log(email, password);
+        signInWithEmail(email,password)
+        .then(res=>{
+            const user=res.user;
+           // console.log(user);
+           form.reset();
+           navigate('/');
+           toast.success('Login successfully');
+        })
+        .catch(error=>{
+            console.error('error:',error);
+            setError(error.message);
+        })
     }
 
 
@@ -41,6 +56,9 @@ const Login = () => {
                             </label>
 
                         </div>
+                        {
+                        error&&<p className='text-red-500'>{error}</p>
+                    }
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
