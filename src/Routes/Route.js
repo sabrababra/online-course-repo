@@ -3,6 +3,8 @@ import Blogs from "../pages/Blogs/Blogs";
 import Course from "../pages/Course/Course";
 import FAQ from "../pages/FAQ/FAQ";
 import Home from "../pages/Home/Home";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -30,6 +32,14 @@ export const router=createBrowserRouter([
             {
                 path:'/faq',
                 element:<FAQ></FAQ>
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
             },
         ]
     }    
