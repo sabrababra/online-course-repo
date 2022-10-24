@@ -43,9 +43,9 @@ const Header = () => {
                                 </div>
                             </label>
                             <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                                <li className='text-xs'>{user?.displayName}</li>
-                                <li className='text-xs'>{user?.email}</li>
-                                <li><a>Logout</a></li>
+                                <li className='text-xs mb-1'>{user?.displayName}</li>
+                                <li className='text-xs mb-1'>{user?.email}</li>
+                                <li><button onClick={()=>{providerLogOut()}}>Logout</button></li>
                             </ul>
                         </div>
                         : <Link to='/login' className="btn ">Login</Link>
