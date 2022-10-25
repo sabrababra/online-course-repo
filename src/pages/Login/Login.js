@@ -18,6 +18,7 @@ const Login = () => {
         .then(res=>{
             const user=res.user;
            // console.log(user);
+           console.log(user);
            form.reset();
            navigate('/');
            toast.success('Login successfully');
