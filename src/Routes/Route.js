@@ -1,3 +1,4 @@
+import NotFound from "../components/NotFound/NotFound";
 import Main from "../layout/Main";
 import Blogs from "../pages/Blogs/Blogs";
 import Course from "../pages/Course/Course";
@@ -42,5 +43,6 @@ export const router=createBrowserRouter([
                 element:<Register></Register>
             },
         ]
-    }    
+    } ,
+    {path:'*',element:<NotFound></NotFound>}   
 ])
