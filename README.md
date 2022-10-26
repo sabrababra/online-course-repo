@@ -1,7 +1,7 @@
 # PreHigh
 #### Online course for learning 
 
-## `LIVE-SITE` : [Quiz Hut](https://adorable-arithmetic-f6fac6.netlify.app)
+## `LIVE-SITE` : [PreHigh](https://assignment-10-client-site.web.app/course)
 
 ## Description
 It is a single-page online learning platform. In home page you can see a little interaction to see all courses. 
