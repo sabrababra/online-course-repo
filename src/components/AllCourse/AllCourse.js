@@ -8,11 +8,18 @@ const AllCourse = () => {
 
     useEffect(()=>{
         setLoading(true);
-        fetch(`http://localhost:5000/courses`)
+        fetch(`https://assignment-10-server-site-lac.vercel.app/courses`)
         .then(res=>res.json())
         .then(data=>{
-            setData(data)
-            setLoading(false)
+
+            return setData(data);
+           
+        })
+        .catch(error=>{
+            console.log(error.message);
+        })
+        .finally(()=>{
+            setLoading(false);
         })
     },[])
     return (

@@ -9,7 +9,7 @@ const SingleCourse = () => {
     const [data,setData]=useState({});
     useEffect(()=>{
         setLoading(true);
-        fetch(`http://localhost:5000/course/${id}`)
+        fetch(`https://assignment-10-server-site-lac.vercel.app/course/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setData(data);
