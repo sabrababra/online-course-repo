@@ -38,8 +38,10 @@ export const router=createBrowserRouter([
                         path:':id',
                         element:<SingleCourse></SingleCourse>
                         
-                    }
+                    },
+                    {path:'*',element:<NotFound></NotFound>} 
                 ]
+                
             },
             {
                 path:'/blogs',

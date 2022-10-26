@@ -13,8 +13,13 @@ const SingleCourse = () => {
         .then(res=>res.json())
         .then(data=>{
             setData(data);
+            //console.log(data);
             setLoading(false);
         })
+        .catch((error) => {
+            setLoading(false);
+            setData({});
+          })
     },[id])
   
     return (
