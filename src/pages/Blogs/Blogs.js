@@ -3,7 +3,7 @@ import React from 'react';
 const Blogs = () => {
     return (
 
-        <div className=' h-[85vh] flex flex-col items-center justify-center'>
+        <div className=' min-h-[85vh] flex flex-col items-center justify-center'>
             <div className='w-10/12 mx-auto'>
                 <div tabIndex={0} className=" mt-4 collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
                     <div className="collapse-title text-xl font-medium">

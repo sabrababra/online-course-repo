@@ -6,7 +6,7 @@ import gratuate from '../../assets/icon/gratuate-icon.svg'
 
 const Cards = () => {
     return (
-        <div className='grid grid-cols-2 lg:grid-cols-4 gap-5 w-11/12 lg:w-10/12 mx-auto my-6'>
+        <div className='grid grid-cols-1 lg:grid-cols-4 gap-5 w-11/12 lg:w-10/12 mx-auto my-6'>
             <div className="card card-side bg-base-100 shadow-xl hover:bg-gray-400
              ">
                 <img className='ml-5' src={pencil} alt="Movie" />
